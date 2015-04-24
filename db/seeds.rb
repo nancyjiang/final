@@ -1,5 +1,5 @@
 Rake:: Task["db:reset"]
-user = User.create([{username: "nancy", email: "njiang2015@kellogg.northwestern.com", location: "Evanston"}, 
+user = Users.create([{username: "nancy", email: "njiang2015@kellogg.northwestern.com", location: "Evanston"}, 
 					{username: "brian", email: "b-eng@kellogg.northwestern.edu", location: "Chicago"}, 
 					{username: "dan", email: "dmtsui@gmail.com", location: "San Francisco"}, 
 					{username: "sara", email: "ms.sara.lu@gmail.com", location: "San Francisco"}, 
@@ -7,13 +7,13 @@ user = User.create([{username: "nancy", email: "njiang2015@kellogg.northwestern.
 					{username: "tommy", email: "tkantapasara2015@kellogg.northwestern.edu", location: "Evanston"}, 
 					{username: "preeza", email: "pshrestha2015@kellogg.northwestern.edu", location: "Evanston"}])
 
-photo = Photo.create([{user_id: 1, uploaded_at: DateTime.now}, 
+photo = Photos.create([{user_id: 1, uploaded_at: DateTime.now}, 
 					  {user_id: 4, uploaded_at: DateTime.now}, 
 					  {user_id: 5, uploaded_at: DateTime.now}, 
 					  {user_id: 7, uploaded_at: DateTime.now},
 					  {user_id: 6, uploaded_at: DateTime.now}])
 
-hashtag = Hashtag.create([{hashtag_name: "sparkly"}, 
+hashtag = Hashtags.create([{hashtag_name: "sparkly"}, 
 						  {hashtag_name: "outfit"}, 
 						  {hashtag_name: "trendy"},
 						  {hashtag_name: "monochrome"}, 
@@ -33,7 +33,7 @@ photo_hashtag = Photo_Hashtag.create([{photo_id: 1, hashtag_id: 2},
 									  {photo_id: 5, hashtag_id: 3},
 									  {photo_id: 5, hashtag_id: 8}])
 
-like = Like.create([{photo_id: 1, user_id: 4},
+like = Likes.create([{photo_id: 1, user_id: 4},
 					{photo_id: 1, user_id: 7}, 
 					{photo_id: 2, user_id: 1},
 					{photo_id: 2, user_id: 6},
