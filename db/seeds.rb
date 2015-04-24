@@ -22,7 +22,7 @@ hashtag = Hashtags.create([{hashtag_name: "sparkly"},
 						  {hashtag_name: "heels"}, 
 						  {hashtag_name: "streetstyle"}])
 
-photo_hashtag = Photo_Hashtags.create([{photo_id: 1, hashtag_id: 2}, 
+photo_hashtag = Photo_Hashtag.create([{photo_id: 1, hashtag_id: 2}, 
 									  {photo_id: 1, hashtag_id: 4},
 									  {photo_id: 2, hashtag_id: 1},
 									  {photo_id: 2, hashtag_id: 6},
