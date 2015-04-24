@@ -18,9 +18,7 @@ Like
   photo_id: integer
   user_id: integer
 
-Follower_Followee
-  follower_id: integer
-  followee_id: integer
+
 
 
 

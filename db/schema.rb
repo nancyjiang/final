@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "follower_followees", force: true do |t|
-    t.integer "follower_id"
-    t.integer "followee_id"
-  end
-
-  add_index "follower_followees", ["followee_id"], name: "index_follower_followees_on_followee_id"
-  add_index "follower_followees", ["follower_id"], name: "index_follower_followees_on_follower_id"
-
   create_table "hashtags", force: true do |t|
     t.string "hashtag_name"
   end
