@@ -13,4 +13,45 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+  create_table "follower_followees", force: true do |t|
+    t.integer "follower_id"
+    t.integer "followee_id"
+  end
+
+  add_index "follower_followees", ["followee_id"], name: "index_follower_followees_on_followee_id"
+  add_index "follower_followees", ["follower_id"], name: "index_follower_followees_on_follower_id"
+
+  create_table "hashtags", force: true do |t|
+    t.string "hashtag_name"
+  end
+
+  create_table "likes", force: true do |t|
+    t.integer "photo_id"
+    t.integer "user_id"
+  end
+
+  add_index "likes", ["photo_id"], name: "index_likes_on_photo_id"
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id"
+
+  create_table "photo_hashtags", force: true do |t|
+    t.integer "photo_id"
+    t.integer "hashtag_id"
+  end
+
+  add_index "photo_hashtags", ["hashtag_id"], name: "index_photo_hashtags_on_hashtag_id"
+  add_index "photo_hashtags", ["photo_id"], name: "index_photo_hashtags_on_photo_id"
+
+  create_table "photos", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "uploaded_at"
+  end
+
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id"
+
+  create_table "users", force: true do |t|
+    t.string "username"
+    t.string "email"
+    t.string "location"
+  end
+
 end

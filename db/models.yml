@@ -1,32 +1,26 @@
-User
-	id: integer
-	user_name: string
-	email: string
-	location: string
+Users
+  username: string
+  email: string
+  location: string
 
-Photo
-	id: integer
-	user_id: integer
-	uploaded_at: datetime
+Photos
+  user_id: integer
+  uploaded_at: datetime
 
-Hashtag
-	id: integer
-	hashtag_name: string
+Hashtags
+  hashtag_name: string
 
 Photo_Hashtag
-	id: integer
-	photo_id: integer
-	hashtag_id: integer
+  photo_id: integer
+  hashtag_id: integer
 
 Likes
-	id: integer
-	photo_id: integer
-	user_id: integer
+  photo_id: integer
+  user_id: integer
 
 Follower_Followee
-	id: integer
-	follower_id: integer
-	followee_id: integer
+  follower_id: integer
+  followee_id: integer
 
 
 
