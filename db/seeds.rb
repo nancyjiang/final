@@ -18,7 +18,7 @@ hashtag = Hashtags.create([{hashtag_name: "sparkly"},
 						  {hashtag_name: "trendy"},
 						  {hashtag_name: "monochrome"}, 
 						  {hashtag_name: "vintage"}, 
-						  {hasthag_name: "accessories"}, 
+						  {hashtag_name: "accessories"}, 
 						  {hashtag_name: "heels"}, 
 						  {hashtag_name: "streetstyle"}])
 
