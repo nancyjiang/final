@@ -1,4 +1,11 @@
-Rake:: Task["db:reset"]
+Users.delete_all
+Photos.delete_all
+Hashtags.delete_all
+Photo_Hashtag.delete_all
+Likes.delete_all
+
+
+
 user = Users.create([{username: "nancy", email: "njiang2015@kellogg.northwestern.com", location: "Evanston"}, 
 					{username: "brian", email: "b-eng@kellogg.northwestern.edu", location: "Chicago"}, 
 					{username: "dan", email: "dmtsui@gmail.com", location: "San Francisco"}, 
