@@ -1,20 +1,20 @@
-Users
+User
   username: string
   email: string
   location: string
 
-Photos
+Photo
   user_id: integer
   uploaded_at: datetime
 
-Hashtags
+Hashtag
   hashtag_name: string
 
 Photo_Hashtag
   photo_id: integer
   hashtag_id: integer
 
-Likes
+Like
   photo_id: integer
   user_id: integer
 
