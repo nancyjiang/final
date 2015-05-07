@@ -1,5 +1,5 @@
 User
-  username: string
+  name: string
   email: string
   location: string
 
@@ -8,7 +8,7 @@ Photo
   uploaded_at: datetime
 
 Hashtag
-  hashtag_name: string
+  name: string
 
 Photo_Hashtag
   photo_id: integer

@@ -5,51 +5,63 @@ Photo_Hashtag.delete_all
 Likes.delete_all
 
 
+#Create the users
+nancy = Users.create(name: "nancy", email: "njiang2015@kellogg.northwestern.com", location: "Evanston") 
+brian = Users.create(name: "brian", email: "b-eng@kellogg.northwestern.edu", location: "Chicago")
+dan = Users.create(name: "dan", email: "dmtsui@gmail.com", location: "San Francisco")
+sara = Users.create(name: "sara", email: "ms.sara.lu@gmail.com", location: "San Francisco")
+tiff = Users.create(name: "tiff", email: "tlung2015@kellogg.northwestern.edu", location: "Evanston")
+tommy = Users.create(name: "tommy", email: "tkantapasara2015@kellogg.northwestern.edu", location: "Evanston")
+preeza = Users.create(name: "preeza", email: "pshrestha2015@kellogg.northwestern.edu", location: "Evanston")
 
-user = Users.create([{username: "nancy", email: "njiang2015@kellogg.northwestern.com", location: "Evanston"}, 
-					{username: "brian", email: "b-eng@kellogg.northwestern.edu", location: "Chicago"}, 
-					{username: "dan", email: "dmtsui@gmail.com", location: "San Francisco"}, 
-					{username: "sara", email: "ms.sara.lu@gmail.com", location: "San Francisco"}, 
-					{username: "tiff", email: "tlung2015@kellogg.northwestern.edu", location: "Evanston"},
-					{username: "tommy", email: "tkantapasara2015@kellogg.northwestern.edu", location: "Evanston"}, 
-					{username: "preeza", email: "pshrestha2015@kellogg.northwestern.edu", location: "Evanston"}])
+#Create the photos
+nancyphoto = Photos.create(user_id: nancy.id, uploaded_at: DateTime.now) 
+saraphoto = Photos.create(user_id: sara.id, uploaded_at: DateTime.now) 
+tiffphoto = Photos.create(user_id: tiff.id, uploaded_at: DateTime.now}, 
+preezaphoto = Photos.create(user_id: preeza.id, uploaded_at: DateTime.now},
+tommyphoto = Photos.create(user_id: tommy.id, uploaded_at: DateTime.now}])
 
-photo = Photos.create([{user_id: 1, uploaded_at: DateTime.now}, 
-					  {user_id: 4, uploaded_at: DateTime.now}, 
-					  {user_id: 5, uploaded_at: DateTime.now}, 
-					  {user_id: 7, uploaded_at: DateTime.now},
-					  {user_id: 6, uploaded_at: DateTime.now}])
+#Create the hashtags
+sparkly = Hashtags.create(name: "sparkly")
+outfit = Hashtags.create(name: "outfit")
+trendy = Hashtags.create(name: "trendy")
+monochrome = Hashtags.create(name: "monochrome")
+vintage = Hashtags.create(name: "vintage")
+accessories = Hashtags.create(name: "accessories")
+heels = Hashtags.create(name: "heels")
+streetstyle = Hashtags.create(name: "streetstyle")
 
-hashtag = Hashtags.create([{hashtag_name: "sparkly"}, 
-						  {hashtag_name: "outfit"}, 
-						  {hashtag_name: "trendy"},
-						  {hashtag_name: "monochrome"}, 
-						  {hashtag_name: "vintage"}, 
-						  {hashtag_name: "accessories"}, 
-						  {hashtag_name: "heels"}, 
-						  {hashtag_name: "streetstyle"}])
+#Create the photo hashtags for Nancy's photos
+Photo_Hashtag.create(photo_id: nancyphoto.id, hashtag_id: outfit.id)
+Photo_Hashtag.create(photo_id: nancyphoto.id, hashtag_id: monochrome.id)
 
-photo_hashtag = Photo_Hashtag.create([{photo_id: 1, hashtag_id: 2}, 
-									  {photo_id: 1, hashtag_id: 4},
-									  {photo_id: 2, hashtag_id: 1},
-									  {photo_id: 2, hashtag_id: 6},
-									  {photo_id: 3, hashtag_id: 2}, 
-									  {photo_id: 3, hashtag_id: 5}, 
-									  {photo_id: 4, hashtag_id: 3}, 
-									  {photo_id: 4, hashtag_id: 7},
-									  {photo_id: 5, hashtag_id: 3},
-									  {photo_id: 5, hashtag_id: 8}])
+#Create the photo hashtags for Sara's photos
+Photo_Hashtag.create(photo_id: saraphoto.id, hashtag_id: sparkly.id)
+Photo_Hashtag.create(photo_id: saraphoto.id, hashtag_id: accessories.id)
 
-like = Likes.create([{photo_id: 1, user_id: 4},
-					{photo_id: 1, user_id: 7}, 
-					{photo_id: 2, user_id: 1},
-					{photo_id: 2, user_id: 6},
-					{photo_id: 3, user_id: 7},
-					{photo_id: 3, user_id: 3},
-					{photo_id: 4, user_id: 5},
-					{photo_id: 4, user_id: 1},
-					{photo_id: 5, user_id: 5},
-					{photo_id: 5, user_id: 3}])
+#Create the photo hashtags for Tiff's photos
+Photo_Hashtag.create(photo_id: tiffphoto.id, hashtag_id: outfit.id) 
+Photo_Hashtag.create(photo_id: tiffphoto.id, hashtag_id: vintage.id) 
+
+#Create the photo hashtags for Preeza's photos
+Photo_Hashtag.create(photo_id: preezaphoto.id, hashtag_id: trendy.id) 
+Photo_Hashtag.create(photo_id: preezaphoto.id, hashtag_id: heels.id)
+
+#Create the photo hashtags for Tommy's photos
+Photo_Hashtag.create(photo_id: tommyphoto.id, hashtag_id: trendy.id)
+Photo_Hashtag.create(photo_id: tommyphoto.id, hashtag_id: streetstyle.id)
+
+#Create the likes 
+like = Likes.create([{photo_id: nancyphoto.id, user_id: sara.id},
+					{photo_id: nancyphoto.id, user_id: preeza.id}, 
+					{photo_id: saraphoto.id, user_id: nancy.id},
+					{photo_id: saraphoto.id, user_id: dan.id},
+					{photo_id: tiffphoto.id, user_id: preeza.id},
+					{photo_id: tiffphoto.id, user_id: tommy.id},
+					{photo_id: preezaphoto.id, user_id: tiff.id},
+					{photo_id: preezaphoto.id, user_id: nancy.id},
+					{photo_id: tommyphoto.id, user_id: tiff.id},
+					{photo_id: tommyphoto.id, user_id: dan.id}])
 
 
 # This file should contain all the record creation needed to seed the database with its default values.
