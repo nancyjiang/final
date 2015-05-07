@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 0) do
 
   create_table "hashtags", force: true do |t|
-    t.string "hashtag_name"
+    t.string "name"
   end
 
   create_table "likes", force: true do |t|
@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "photos", ["user_id"], name: "index_photos_on_user_id"
 
   create_table "users", force: true do |t|
-    t.string "username"
     t.string "email"
     t.string "location"
+    t.string "name"
   end
 
 end
