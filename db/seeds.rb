@@ -15,11 +15,11 @@ tommy = User.create(name: "tommy", email: "tkantapasara2015@kellogg.northwestern
 preeza = User.create(name: "preeza", email: "pshrestha2015@kellogg.northwestern.edu", location: "Evanston")
 
 #Create the photos
-nancyphoto = Photo.create(user_id: nancy.id, uploaded_at: DateTime.now) 
-saraphoto = Photo.create(user_id: sara.id, uploaded_at: DateTime.now) 
-tiffphoto = Photo.create(user_id: tiff.id, uploaded_at: DateTime.now)
-preezaphoto = Photo.create(user_id: preeza.id, uploaded_at: DateTime.now)
-tommyphoto = Photo.create(user_id: tommy.id, uploaded_at: DateTime.now)
+nancyphoto = Photo.create(user_id: nancy.id, name: "nancyphoto", uploaded_at: DateTime.now) 
+saraphoto = Photo.create(user_id: sara.id, name: "saraphoto", uploaded_at: DateTime.now) 
+tiffphoto = Photo.create(user_id: tiff.id, name: "tiffphoto", uploaded_at: DateTime.now)
+preezaphoto = Photo.create(user_id: preeza.id, name: "preezaphoto", uploaded_at: DateTime.now)
+tommyphoto = Photo.create(user_id: tommy.id, name: "tommyphoto", uploaded_at: DateTime.now)
 
 #Create the hashtags
 sparkly = Hashtag.create(name: "sparkly")

@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<table>
+ <thead>
+   <tr>
+     <th>Photo Name</th>
+     <th>User Name</th>
+     <th>Uploaded at</th>
+   </tr>
+ </thead>
+
+ <tbody>
+     <tr>
+       <td><%= @photo.name %></td>
+       <td><%= @photo.user.name %></td>
+       <td><%= @photo.uploaded_at %></td>
+
+     </tr>
+ </tbody>
+</table>
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

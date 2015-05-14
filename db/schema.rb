@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "photos", force: true do |t|
     t.integer  "user_id"
+    t.string   "name"
     t.datetime "uploaded_at"
   end
 

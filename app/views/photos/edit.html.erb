@@ -1,0 +1,14 @@
+<h1>Edit Photo</h1>
+
+<%= form_for @photo do |form| %>
+<div class="form-group">
+<%= form.label :name %>
+<%= form.text_field :name, class: "form-control" %>
+<%= form.label :user_id %>
+<%= form.collection_select :user_id, User.all, :id, :name %>
+</div>
+<%= form.button 'Update Photo', class: "btn btn-success" %>
+<% end %>
+
+<%= link_to 'Show', @photo %> |
+<%= link_to 'Back', photo_path %>

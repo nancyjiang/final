@@ -5,6 +5,7 @@ User
 
 Photo
   user_id: integer
+  name: string
   uploaded_at: datetime
 
 Hashtag

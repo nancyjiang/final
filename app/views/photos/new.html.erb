@@ -1,0 +1,10 @@
+<%= form_for @photo do |form| %>
+<div class="form-group">
+<%= form.label :name %>
+<%= form.text_field :name, class: "form-control" %>
+<%= form.label :user_id %>
+<%= form.collection_select :user_id, User.all, :id, :name %>
+
+</div>
+<%= form.button 'Upload', class: "btn btn-success" %>
+<% end %>
