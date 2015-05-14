@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+  create_table "hashtag_photos", force: true do |t|
+    t.integer "photo_id"
+    t.integer "hashtag_id"
+  end
+
+  add_index "hashtag_photos", ["hashtag_id"], name: "index_hashtag_photos_on_hashtag_id"
+  add_index "hashtag_photos", ["photo_id"], name: "index_hashtag_photos_on_photo_id"
+
   create_table "hashtags", force: true do |t|
     t.string "name"
   end
@@ -25,14 +33,6 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "likes", ["photo_id"], name: "index_likes_on_photo_id"
   add_index "likes", ["user_id"], name: "index_likes_on_user_id"
 
-  create_table "photo_hashtags", force: true do |t|
-    t.integer "photo_id"
-    t.integer "hashtag_id"
-  end
-
-  add_index "photo_hashtags", ["hashtag_id"], name: "index_photo_hashtags_on_hashtag_id"
-  add_index "photo_hashtags", ["photo_id"], name: "index_photo_hashtags_on_photo_id"
-
   create_table "photos", force: true do |t|
     t.integer  "user_id"
     t.datetime "uploaded_at"
@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "photos", ["user_id"], name: "index_photos_on_user_id"
 
   create_table "users", force: true do |t|
+    t.string "name"
     t.string "email"
     t.string "location"
-    t.string "name"
   end
 
 end

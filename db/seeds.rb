@@ -1,7 +1,7 @@
 User.delete_all
 Photo.delete_all
 Hashtag.delete_all
-Photo_Hashtag.delete_all
+HashtagPhoto.delete_all
 Like.delete_all
 
 
@@ -32,24 +32,24 @@ heels = Hashtag.create(name: "heels")
 streetstyle = Hashtag.create(name: "streetstyle")
 
 #Create the photo hashtags for Nancy's photos
-Photo_Hashtag.create(photo_id: nancyphoto.id, hashtag_id: outfit.id)
-Photo_Hashtag.create(photo_id: nancyphoto.id, hashtag_id: monochrome.id)
+HashtagPhoto.create(photo_id: nancyphoto.id, hashtag_id: outfit.id)
+HashtagPhoto.create(photo_id: nancyphoto.id, hashtag_id: monochrome.id)
 
 #Create the photo hashtags for Sara's photos
-Photo_Hashtag.create(photo_id: saraphoto.id, hashtag_id: sparkly.id)
-Photo_Hashtag.create(photo_id: saraphoto.id, hashtag_id: accessories.id)
+HashtagPhoto.create(photo_id: saraphoto.id, hashtag_id: sparkly.id)
+HashtagPhoto.create(photo_id: saraphoto.id, hashtag_id: accessories.id)
 
 #Create the photo hashtags for Tiff's photos
-Photo_Hashtag.create(photo_id: tiffphoto.id, hashtag_id: outfit.id) 
-Photo_Hashtag.create(photo_id: tiffphoto.id, hashtag_id: vintage.id) 
+HashtagPhoto.create(photo_id: tiffphoto.id, hashtag_id: outfit.id) 
+HashtagPhoto.create(photo_id: tiffphoto.id, hashtag_id: vintage.id) 
 
 #Create the photo hashtags for Preeza's photos
-Photo_Hashtag.create(photo_id: preezaphoto.id, hashtag_id: trendy.id) 
-Photo_Hashtag.create(photo_id: preezaphoto.id, hashtag_id: heels.id)
+HashtagPhoto.create(photo_id: preezaphoto.id, hashtag_id: trendy.id) 
+HashtagPhoto.create(photo_id: preezaphoto.id, hashtag_id: heels.id)
 
 #Create the photo hashtags for Tommy's photos
-Photo_Hashtag.create(photo_id: tommyphoto.id, hashtag_id: trendy.id)
-Photo_Hashtag.create(photo_id: tommyphoto.id, hashtag_id: streetstyle.id)
+HashtagPhoto.create(photo_id: tommyphoto.id, hashtag_id: trendy.id)
+HashtagPhoto.create(photo_id: tommyphoto.id, hashtag_id: streetstyle.id)
 
 #Create the likes 
 like = Like.create([{photo_id: nancyphoto.id, user_id: sara.id},

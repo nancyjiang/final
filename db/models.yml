@@ -10,7 +10,7 @@ Photo
 Hashtag
   name: string
 
-Photo_Hashtag
+HashtagPhoto
   photo_id: integer
   hashtag_id: integer
 
