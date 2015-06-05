@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	skip_before_action :auth, only: [:new, :create]
+
 	def index 
 		@users = User.all
 	end
@@ -12,15 +14,11 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.new(params[:user])
-
-   		respond_to do |format|
-			if @user.save
-				format.html { redirect_to @user }
-			else
-				format.html { render :new }
-				
-			end
+		@user = User.create(params["user"])
+		if @user.valid?
+		 	redirect_to users_path
+		else
+		 	render "new"
 		end
 	end
 
@@ -29,22 +27,15 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		@user = User.find_by(id: params["id"])
-
-   		respond_to do |format|
-			if @user.update(params[:user])
-				format.html { redirect_to @user }
-			else
-				format.html { render :new }
-				
-			end
-		end
-	end
+	    @user = User.find_by(id: params["id"])
+	    @user.update(params["user"])
+	    redirect_to users_path
+  	end
 
 	def destroy
 		@user = User.find_by(id: params["id"])
 	    @user.destroy
-		redirect_to users_url
+		redirect_to users_path
 	end
 
 end
