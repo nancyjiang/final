@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
           <div class="photo">
-            <%= link_to image_tag(photo.image_url(:thumb).to_s, {class: "img-thumbnail"}), photo_path(photo.id)%>
+            <%= link_to image_tag(photo.image_url().to_s, {class: "img-thumbnail"}), photo_path(photo.id)%>
             <div class="row">
               <div class="col-sm-4 col-md-4 col-lg-4">
 
