@@ -1,3 +1,4 @@
+
 class UsersController < ApplicationController
 	skip_before_action :auth, only: [:new, :create]
 
@@ -6,7 +7,7 @@ class UsersController < ApplicationController
 	end
 
 	def show 
-		@user = User.find_by(id: params["id"])
+		@user = current_user
 	end
 
 	def new
@@ -16,24 +17,24 @@ class UsersController < ApplicationController
 	def create
 		@user = User.create(params["user"])
 		if @user.valid?
-		 	redirect_to users_path
+		 	redirect_to user_path(@user)
 		else
 		 	render "new"
 		end
 	end
 
 	def edit
-		@user = User.find_by(id: params["id"])
+		@user = current_user
 	end
 
 	def update
-	    @user = User.find_by(id: params["id"])
+	    @user = current_user
 	    @user.update(params["user"])
 	    redirect_to users_path
   	end
 
 	def destroy
-		@user = User.find_by(id: params["id"])
+		@user = current_user
 	    @user.destroy
 		redirect_to users_path
 	end

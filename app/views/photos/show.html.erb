@@ -1,21 +1,32 @@
 <p id="notice"><%= notice %></p>
-<table>
- <thead>
-   <tr>
-     <th>Photo Name</th>
-     <th>User Name</th>
-     <th>Uploaded at</th>
-   </tr>
- </thead>
+<% if current_user && current_user.id == @photo.user.id %>
+<%= button_to "Edit Photo", edit_photo_path(@photo), class: "btn btn-lg btn-primary pull-right", method: "get" %>
+<% end %>
+<%= button_to "Back", photos_path, class: "btn btn-lg btn-primary pull-left", method: "get" %>
+<div class="container text-center">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="photo">
+            <%= image_tag @photo.image_url(:full).to_s, {class: "img-thumbnail"} %>
+            <div class="row">
+              <div class="col-sm-4 col-md-4 col-lg-4">
 
- <tbody>
-     <tr>
-       <td><%= @photo.name %></td>
-       <td><%= @photo.user.name %></td>
-       <td><%= @photo.uploaded_at %></td>
-
-     </tr>
- </tbody>
-</table>
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+              </div>
+              <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="name"><%= @photo.name %> by <%= @photo.user.name %> |
+                  <% @photo.hashtags.each do |hashtag| %>
+                      <%= link_to "##{hashtag.name}", photos_path(q: hashtag.name) %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="col-sm-4 col-md-4 col-lg-4 text-right">
+                <%= link_to( current_user ? submit_vote_path(@photo.id) : "javascript:void(0);" ) do %>
+                    <i class='fa fa-thumbs-o-up fa-2x like'></i>
+                <% end %>
+                <%= @photo.likes.count %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

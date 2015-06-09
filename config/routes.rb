@@ -5,7 +5,8 @@ resources :photos
 resources :sessions
 
 get "/logout", to: "sessions#destroy"
+get "photos/vote/:id", to: "photos#vote", as: "submit_vote"
 
-root to: "home#index"
+root to: "photos#index"
 
 end

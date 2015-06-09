@@ -1,13 +1,16 @@
 <h1>Edit Photo</h1>
 
 <%= form_for @photo do |form| %>
-<div class="form-group">
-<%= form.label :name %>
-<%= form.text_field :name, class: "form-control" %>
-<%= form.label :user_id %>
-<%= form.collection_select :user_id, User.all, :id, :name %>
-</div>
-<%= form.button 'Update Photo', class: "btn btn-success" %>
+    <div class="form-group">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control" %>
+      <%= form.file_field :image %>
+      <%= form.label :hashtags %>
+      <%= form.fields_for :hashtags do |hashtag_form| %>
+          <%= hashtag_form.text_field :name %>
+      <% end %>
+    </div>
+    <%= form.button 'Update Photo', class: "btn btn-success" %>
 <% end %>
 
 <%= link_to 'Show', @photo %> |

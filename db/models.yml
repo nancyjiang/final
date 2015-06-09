@@ -2,11 +2,13 @@ User
   name: string
   email: string
   location: string
+  password_digest: string
 
 Photo
   user_id: integer
   name: string
   uploaded_at: datetime
+  image: string
 
 Hashtag
   name: string

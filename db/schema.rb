@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150602052223) do
     t.integer  "user_id"
     t.string   "name"
     t.datetime "uploaded_at"
+    t.string   "image"
   end
 
   add_index "photos", ["user_id"], name: "index_photos_on_user_id"
