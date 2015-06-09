@@ -12,11 +12,14 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bcrypt'
 gem 'rmagick'
 gem 'carrierwave'
-gem 'sqlite3'
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'ez'
 
+group :development do
+  gem 'sqlite3'
+end
 
 group :production do
   gem 'rails_12factor'
