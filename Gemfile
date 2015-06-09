@@ -17,9 +17,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'ez'
 
-group :development do
-  gem 'sqlite3'
-end
 
 group :production do
   gem 'rails_12factor'
